@@ -5,7 +5,6 @@ import {
   Global,
   Inject,
   Provider,
-  Type,
 } from '@nestjs/common';
 import { ModuleRef } from '@nestjs/core';
 import { DgraphModuleOptions } from './interfaces/dgraph-options.interface';

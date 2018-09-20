@@ -34,9 +34,12 @@ export class DgraphService {
   }
 
   close() {
-    this._stubs.forEach(stub => {
-      stub.close();
-    });
+    if (this._stubs) {
+      this._stubs.forEach(stub => {
+        stub.close();
+      });
+      this._stubs = null;
+    }
     this._client = null;
   }
 }
