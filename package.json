@@ -1,6 +1,6 @@
 {
   "name": "@valsamonte/nestjs-dgraph",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "dgraph-js wrapper for nestjs",
   "author": "val.samonte@gmail.com",
   "license": "MIT",
