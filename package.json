@@ -1,16 +1,50 @@
 {
   "name": "@valsamonte/nestjs-dgraph",
+  "version": "0.1.0",
   "description": "dgraph-js wrapper for nestjs",
   "author": "val.samonte@gmail.com",
-  "version": "0.1.0",
   "license": "MIT",
   "repository": "val-samonte/nestjs-dgraph",
   "scripts": {
+    "build": "rimraf dist && tsc -p tsconfig.json",
+    "precommit": "lint-staged",
+    "prepublish:npm": "npm run build",
     "publish:npm": "npm publish --access public"
   },
   "keywords": [
     "nestjs",
     "dgraph"
   ],
-  "dependencies": {}
+  "devDependencies": {
+    "@nestjs/common": "^5.1.0",
+    "@nestjs/core": "^5.1.0",
+    "@types/google-protobuf": "^3.2.7",
+    "@types/node": "^7.0.41",
+    "@types/protobufjs": "^6.0.0",
+    "dgraph-js": "^1.2.1",
+    "grpc": "^1.15.1",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.0.0",
+    "prettier": "^1.11.1",
+    "reflect-metadata": "0.1.12",
+    "rimraf": "^2.6.2",
+    "rxjs": "^6.0.0",
+    "rxjs-compat": "^6.2.0",
+    "typescript": "^2.8.0"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "@nestjs/common": "^5.1.0",
+    "@nestjs/core": "^5.1.0",
+    "dgraph-js": "^1.2.1",
+    "grpc": "^1.15.1",
+    "reflect-metadata": "0.1.12",
+    "rxjs": "^6.0.0"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "prettier --write",
+      "git add"
+    ]
+  }
 }
