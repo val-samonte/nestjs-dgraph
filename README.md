@@ -41,13 +41,24 @@ Inject `DgraphService` to your services and access the DgraphClient
 
 @Injectable()
 export class SomeService {
-  constructor(service: DgraphService) {}
+  constructor(dgraph: DgraphService) {}
 
   alterSchema() {
+    const schema = "name: string @index(exact) .";
     const op = new dgraph.Operation();
     op.setSchema(schema);
-    await this.service.client.alter(op);
+    await this.dgraph.client.alter(op);
+  }
+
+  dropAll() {
+    const op = new dgraph.Operation();
+    op.setDropAll(true);
+    await this.dgraph.client.alter(op);
   }
 }
 
 ```
+
+## Further Reading
+
+Refer to [dgraph-js](https://github.com/dgraph-io/dgraph-js) official docs for more dgraph usage.

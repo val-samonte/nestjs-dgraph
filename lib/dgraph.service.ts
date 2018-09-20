@@ -13,18 +13,30 @@ export class DgraphService {
   }
 
   constructor(@Inject(DGRAPH_MODULE_OPTIONS) options: DgraphModuleOptions) {
-    this._stubs = options.stubs.map(stub => {
-      return new DgraphClientStub(stub.address, stub.credentials, stub.options);
-    });
-    this._client = new DgraphClient(...this._stubs);
-    if (options.debug) {
-      this._client.setDebugMode(true);
+    this.createClient(options);
+  }
+
+  createClient(options: DgraphModuleOptions) {
+    if (!this._client) {
+      this._stubs = options.stubs.map(stub => {
+        return new DgraphClientStub(
+          stub.address,
+          stub.credentials,
+          stub.options,
+        );
+      });
+      this._client = new DgraphClient(...this._stubs);
+      if (options.debug) {
+        this._client.setDebugMode(true);
+      }
     }
+    return this._client;
   }
 
   close() {
     this._stubs.forEach(stub => {
       stub.close();
     });
+    this._client = null;
   }
 }
