@@ -26,7 +26,7 @@ import * as grpc from 'grpc';
           address: 'localhost:9080',
           credentials: grpc.credentials.createInsecure()
         }
-      ]
+      ],
       debug: true
     })
   ],
