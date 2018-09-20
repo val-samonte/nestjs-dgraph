@@ -59,6 +59,11 @@ export class SomeService {
 
 ```
 
+## Example
+
+See a simple [example](https://github.com/val-samonte/nestjs-dgraph-example).
+
 ## Further Reading
 
 Refer to [dgraph-js](https://github.com/dgraph-io/dgraph-js) official docs for more dgraph usage.
+
