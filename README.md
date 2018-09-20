@@ -5,7 +5,7 @@
 ## Installation
 
 ```bash
-npm i --save @valsamonte/nestjs-dgraph dgraph grpc
+npm i --save @valsamonte/nestjs-dgraph dgraph-js grpc
 ```
 
 ## Quick Start
