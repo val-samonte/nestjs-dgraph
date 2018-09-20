@@ -1,0 +1,16 @@
+{
+  "name": "@valsamonte/nestjs-dgraph",
+  "description": "dgraph-js wrapper for nestjs",
+  "author": "val.samonte@gmail.com",
+  "version": "0.1.0",
+  "license": "MIT",
+  "repository": "val-samonte/nestjs-dgraph",
+  "scripts": {
+    "publish:npm": "npm publish --access public"
+  },
+  "keywords": [
+    "nestjs",
+    "dgraph"
+  ],
+  "dependencies": {}
+}
